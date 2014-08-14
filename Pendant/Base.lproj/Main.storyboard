@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--App View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="AppViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fPH-OE-uz9" customClass="EZAudioPlot">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEd-62-gXP">
+                                <rect key="frame" x="135" y="498" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="QGx-ef-89u"/>
+                                    <constraint firstAttribute="width" constant="50" id="UZj-gX-Riw"/>
+                                    <constraint firstAttribute="height" constant="50" id="VIE-XH-4Ap"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="iFm-18-vZG"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="microphoneButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="CPN-53-gKM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="fPH-OE-uz9" secondAttribute="bottom" id="Emx-8h-zGr"/>
+                            <constraint firstAttribute="trailing" secondItem="fPH-OE-uz9" secondAttribute="trailing" id="FJg-yA-ngQ"/>
+                            <constraint firstAttribute="trailing" secondItem="lEd-62-gXP" secondAttribute="trailing" constant="135" id="OfC-MJ-gdh"/>
+                            <constraint firstItem="fPH-OE-uz9" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="RDl-a4-U6H"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="lEd-62-gXP" secondAttribute="bottom" constant="20" id="RUz-FQ-0Fl"/>
+                            <constraint firstItem="lEd-62-gXP" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="135" id="fPS-fH-3Ca"/>
+                            <constraint firstItem="fPH-OE-uz9" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-20" id="hbU-DF-mh3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="audioPlot" destination="fPH-OE-uz9" id="q5u-2z-xNL"/>
+                        <outlet property="microphoneButton" destination="lEd-62-gXP" id="aNe-FO-33x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
