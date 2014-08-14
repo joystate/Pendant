@@ -35,6 +35,8 @@
 
 #import "CustomCellBackground.h"
 
+#import "Constants.h"
+
 @interface ScanViewController()
 {
     bool editingRow;
@@ -48,44 +50,32 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        UINavigationItem *navItem = [self navigationItem];
-        [navItem setTitle:@"Found RFduinos"];
-        
         rfduinoManager = [RFduinoManager sharedRFduinoManager];
     }
     return self;
 }
 
+- (UINavigationItem *)navigationItem
+{
+    UINavigationItem *navigationItem = [super navigationItem];
+    UILabel *customLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320.0f, 44.0f)];
+    customLabel.text = @"Found RFduinos";
+    customLabel.textColor = kPurpleColor;
+    customLabel.textAlignment = NSTextAlignmentCenter;
+    navigationItem.titleView = customLabel;
+    return navigationItem;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     rfduinoManager.delegate = self;
     
     int numberOfLines = 3;
     self.tableView.rowHeight = (44.0 + (numberOfLines - 1) * 19.0);
-    
-    UIColor *start = [UIColor colorWithRed:58/255.0 green:108/255.0 blue:183/255.0 alpha:0.15];
-    UIColor *stop = [UIColor colorWithRed:58/255.0 green:108/255.0 blue:183/255.0 alpha:0.45];
-    
-    CAGradientLayer *gradient = [CAGradientLayer layer];
-    // gradient.frame = [self.view bounds];
-    gradient.frame = CGRectMake(0.0, 0.0, 1024.0, 1024.0);
-    gradient.colors = [NSArray arrayWithObjects:(id)start.CGColor, (id)stop.CGColor, nil];
-    [self.tableView.layer insertSublayer:gradient atIndex:0];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - Table view data source
 
@@ -139,11 +129,6 @@
         start = [UIColor colorWithRed:253/255.0 green:255/255.0 blue:255/255.0 alpha: 1.0];
         stop = [UIColor colorWithRed:253/255.0 green:255/255.0 blue:255/255.0 alpha: 0.7];
     }
-
-    CustomCellBackground *ccb = [[CustomCellBackground alloc] init];
-    ccb.startColor = start;
-    ccb.stopColor = stop;
-    cell.backgroundView = ccb;
     
     NSString *text = [[NSString alloc] initWithFormat:@"%@", rfduino.name];
     
@@ -165,7 +150,9 @@
     [detail appendFormat:@"%@", uuid];
     
     cell.textLabel.text = text;
+    cell.textLabel.textColor = kPurpleColor;
     cell.detailTextLabel.text = detail;
+    cell.detailTextLabel.textColor = kPurpleColor;
     cell.detailTextLabel.numberOfLines = 3;
     
     if (indexPath.row < signalStrength.count) {

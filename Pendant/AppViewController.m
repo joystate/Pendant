@@ -11,8 +11,6 @@
 #import "WordHandler.h"
 
 
-#define kPurpleColor [UIColor colorWithRed:0.5 green:0 blue:1.0 alpha:1.0]
-
 @interface AppViewController ()
 
 @property (strong, nonatomic) AVAudioPlayer *audioPlayer;
@@ -206,30 +204,42 @@ withNumberOfChannels:(UInt32)numberOfChannels {
         
         NSLog(@"starting counter: %ld", self.emotionCounter);
         
+        self.green = 0;
+        
         for (NSString *word in result) {
             if ([self.positiveWords containsObject:[word uppercaseString]]) {
                 self.emotionCounter += 1;
+                if (self.blue < 1) {
+                    self.blue += 0.02;
+                } else {
+                    self.blue = 1;
+                }
+                
+                if (self.red > 0) {
+                    self.red -= 0.01;
+                } else {
+                    self.red = 0;
+                }
+                
             } else if ([self.negativeWords containsObject:[word uppercaseString]]) {
                 self.emotionCounter -= 1;
+                if (self.red < 1) {
+                    self.red += 0.01;
+                } else {
+                    self.red = 1;
+                }
+                
+                if (self.blue > 0) {
+                    self.blue -= 0.01;
+                } else {
+                    self.blue = 0;
+                }
+                
             }
         }
         
-        if (self.emotionCounter >= 1) {
-            NSLog(@"good: %ld", (long)self.emotionCounter);
-            self.red = 0;
-            self.green = 1;
-            self.blue = 0;
-        } else if (self.emotionCounter < 1 && self.emotionCounter != 0) {
-            NSLog(@"bad: %ld", (long)self.emotionCounter);
-            self.red = 1;
-            self.blue = 0;
-            self.green = 0;
-        } else {
-            NSLog(@"neutral: %ld", (long)self.emotionCounter);
-            self.red = 0;
-            self.green = 0;
-            self.blue = 1;
-        }
+        NSLog(@"blue: %f", self.blue);
+        NSLog(@"red: %f", self.red);
         
         NSLog(@"counter: %ld", (long)self.emotionCounter);
         [self selectColor];

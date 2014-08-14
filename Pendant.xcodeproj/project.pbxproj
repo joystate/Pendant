@@ -59,6 +59,7 @@
 		35EF08AB199C7AB90040F509 /* RFduino.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EF08A2199C7AB90040F509 /* RFduino.m */; };
 		35EF08AC199C7AB90040F509 /* RfduinoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EF08A5199C7AB90040F509 /* RfduinoManager.m */; };
 		35EF08AD199C7AB90040F509 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EF08A8199C7AB90040F509 /* ScanViewController.m */; };
+		35EF08B3199C8C2A0040F509 /* EmotionCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EF08B2199C8C2A0040F509 /* EmotionCounter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +157,8 @@
 		35EF08A6199C7AB90040F509 /* RFduinoManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFduinoManagerDelegate.h; sourceTree = "<group>"; };
 		35EF08A7199C7AB90040F509 /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
 		35EF08A8199C7AB90040F509 /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
+		35EF08B1199C8C2A0040F509 /* EmotionCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmotionCounter.h; sourceTree = "<group>"; };
+		35EF08B2199C8C2A0040F509 /* EmotionCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmotionCounter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +267,8 @@
 				356FFB8C199B996E00C13C2D /* Main.storyboard */,
 				356FFB8F199B996E00C13C2D /* AppViewController.h */,
 				356FFB90199B996E00C13C2D /* AppViewController.m */,
+				35EF08B1199C8C2A0040F509 /* EmotionCounter.h */,
+				35EF08B2199C8C2A0040F509 /* EmotionCounter.m */,
 				356FFB92199B996E00C13C2D /* Images.xcassets */,
 				356FFB81199B996E00C13C2D /* Supporting Files */,
 			);
@@ -474,6 +479,7 @@
 				356FFBD5199BA62300C13C2D /* EZAudioPlot.m in Sources */,
 				356FFBDC199BA62300C13C2D /* TPCircularBuffer.c in Sources */,
 				356FFB91199B996E00C13C2D /* AppViewController.m in Sources */,
+				35EF08B3199C8C2A0040F509 /* EmotionCounter.m in Sources */,
 				350D1834199BDF510026B6C9 /* FAKFontAwesome.m in Sources */,
 				356FFBD4199BA62300C13C2D /* EZAudioPlayer.m in Sources */,
 				350D1835199BDF510026B6C9 /* FAKFoundationIcons.m in Sources */,
